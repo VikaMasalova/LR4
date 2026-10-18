@@ -17,6 +17,12 @@ public class Task2
     // Виведення типу та значення параметра
     static void printParameter(Object param)
     {
+        if (param == null)
+        {
+            System.out.println("Тип: null, значення: null");
+            return;
+        }
+
         if (param instanceof Student)
         {
             Student s = (Student) param;
@@ -32,8 +38,8 @@ public class Task2
 
     // Спосіб 1: п'ять явно заданих параметрів
     static void showExplicit(String text, int number,
-                             double price, boolean active,
-                             Student student)
+                              double price, boolean active,
+                              Student student)
     {
         System.out.println("\nСпосіб 1: явні параметри");
         printParameter(text);
