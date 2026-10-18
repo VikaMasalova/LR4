@@ -3,10 +3,16 @@ public class Task3
 
     private String message = "Це поле зовнішнього класу";
     private int number = 17;
+    private static String staticMessage = "Це статичне поле зовнішнього класу";
 
     void outerMethod()
     {
         System.out.println("Викликано метод зовнішнього класу");
+    }
+
+    static void staticOuterMethod()
+    {
+        System.out.println("Викликано статичний метод зовнішнього класу");
     }
 
     // Звичайний вкладений клас
@@ -27,11 +33,9 @@ public class Task3
     {
         void show()
         {
-            System.out.println(
-                    "Це статичний вкладений клас");
-            System.out.println(
-                    "Він може звертатися до статичних членів "
-                            + "зовнішнього класу без його об'єкта.");
+            System.out.println("Це статичний вкладений клас");
+            System.out.println(staticMessage);
+            staticOuterMethod();
         }
     }
 
@@ -48,4 +52,3 @@ public class Task3
         nested.show();
     }
 }
-
