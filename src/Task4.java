@@ -11,7 +11,9 @@ public class Task4
     void demonstrate()
     {
         int constantNumber = 10;
-        int changeableNumber = 20;
+        // Локальний клас може працювати лише з effectively final змінними.
+        // Якщо після цього змінити значення змінної, компілятор заборонить таке використання.
+        int effectivelyFinalNumber = 20;
 
         // Локальний клас, оголошений усередині методу
         class LocalClass
@@ -24,8 +26,8 @@ public class Task4
                 System.out.println(
                         "Локальна змінна: " + constantNumber);
                 System.out.println(
-                        "Змінна, що не змінювалася: "
-                                + changeableNumber);
+                        "Змінна, що є effectively final: "
+                                + effectivelyFinalNumber);
             }
         }
 
@@ -39,4 +41,3 @@ public class Task4
         example.demonstrate();
     }
 }
-
